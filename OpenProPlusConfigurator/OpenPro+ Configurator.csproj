@@ -1,0 +1,1548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{043D039B-9712-4244-9DDB-B9CAD5B81031}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenProPlusConfigurator</RootNamespace>
+    <AssemblyName>OpenPro+ Configurator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\OpenProPlus_Config.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CheckBoxComboBox">
+      <HintPath>..\packages\CheckBoxComboBox.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Bonjour">
+      <HintPath>..\packages\Interop.Bonjour.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Renci.SshNet">
+      <HintPath>..\packages\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AO.cs" />
+    <Compile Include="AOConfiguration.cs" />
+    <Compile Include="AOMap.cs" />
+    <Compile Include="Bda.cs" />
+    <Compile Include="clsFTP.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="csLog.cs" />
+    <Compile Include="DNP3DNPSA.cs" />
+    <Compile Include="DNP3Encryption.cs" />
+    <Compile Include="DNP3ObjectVariation.cs" />
+    <Compile Include="DNP3Settings.cs" />
+    <Compile Include="DNP3UnsolResponse.cs" />
+    <Compile Include="DNP3User.cs" />
+    <Compile Include="DNPSA.cs" />
+    <Compile Include="DNPSlaveGroup.cs" />
+    <Compile Include="Encryption.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSLD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSLD.Designer.cs">
+      <DependentUpon>FrmSLD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GDSlave.cs" />
+    <Compile Include="GraphicalDisplaySlaveGroup.cs" />
+    <Compile Include="MQTTSalveGroup.cs" />
+    <Compile Include="MQTTSlave.cs" />
+    <Compile Include="ObjectValidation.cs" />
+    <Compile Include="OPP.cs" />
+    <Compile Include="DataItem.cs" />
+    <Compile Include="Directory.cs" />
+    <Compile Include="DRConfig.cs" />
+    <Compile Include="DRConfiguration.cs" />
+    <Compile Include="Fcda.cs" />
+    <Compile Include="frmBonjour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBonjour.designer.cs">
+      <DependentUpon>frmBonjour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFTP.Designer.cs">
+      <DependentUpon>frmFTP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHTMLWebResponse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHTMLWebResponse.Designer.cs">
+      <DependentUpon>frmHTMLWebResponse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInput.Designer.cs">
+      <DependentUpon>frmInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GridItem.cs" />
+    <Compile Include="ICDFilesData.cs" />
+    <Compile Include="IConfigure.cs" />
+    <Compile Include="IPValid.cs" />
+    <Compile Include="LN.cs" />
+    <Compile Include="LNType.cs" />
+    <Compile Include="LPFile.cs" />
+    <Compile Include="LPFileConfiguration.cs" />
+    <Compile Include="ExcelUtlity.cs" />
+    <Compile Include="FileDirectoryOperations.cs" />
+    <Compile Include="LoadProfileGroup.cs" />
+    <Compile Include="LoadProfileMaster.cs" />
+    <Compile Include="PrivateTag.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ProtocolGateway.cs" />
+    <Compile Include="Report.cs" />
+    <Compile Include="SchemaValidationLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchemaValidationLog.Designer.cs">
+      <DependentUpon>SchemaValidationLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicalDisplaySlave.cs" />
+    <Compile Include="SLDSettings.cs" />
+    <Compile Include="SMSSlave.cs" />
+    <Compile Include="SMSSlaveGroup.cs" />
+    <Compile Include="SMSUser.cs" />
+    <Compile Include="SPORTSlaveGroup.cs" />
+    <Compile Include="SPORTSlave.cs" />
+    <Compile Include="IEC104Master.cs" />
+    <Compile Include="IEC104MasterGroup.cs" />
+    <Compile Include="IEC61850ServerGroup.cs" />
+    <Compile Include="IEC61850ServerMaster.cs" />
+    <Compile Include="IEC61850ServerSlave.cs" />
+    <Compile Include="IEC61850ServerSlaveGroup.cs" />
+    <Compile Include="ADRGroup.cs" />
+    <Compile Include="ADRMaster.cs" />
+    <Compile Include="AIMap.cs" />
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DerivedDI.cs" />
+    <Compile Include="DD.cs" />
+    <Compile Include="DP.cs" />
+    <Compile Include="DerivedParam.cs" />
+    <Compile Include="ENMap.cs" />
+    <Compile Include="CLA.cs" />
+    <Compile Include="ClosedLoopAction.cs" />
+    <Compile Include="DOMap.cs" />
+    <Compile Include="DIMap.cs" />
+    <Compile Include="EN.cs" />
+    <Compile Include="ENConfiguration.cs" />
+    <Compile Include="DO.cs" />
+    <Compile Include="DI.cs" />
+    <Compile Include="DOConfiguration.cs" />
+    <Compile Include="DIConfiguration.cs" />
+    <Compile Include="Details.cs" />
+    <Compile Include="frmOpenPro+UI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpenPro+UI.Designer.cs">
+      <DependentUpon>frmOpenPro+UI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOpenProPlus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOpenProPlus.Designer.cs">
+      <DependentUpon>frmOpenProPlus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOverview.Designer.cs">
+      <DependentUpon>frmOverview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProgess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProgess.Designer.cs">
+      <DependentUpon>frmProgess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globals.cs" />
+    <Compile Include="IEC101Group.cs" />
+    <Compile Include="IEC101SlaveGroup.cs" />
+    <Compile Include="IEC101Master.cs" />
+    <Compile Include="IEC101Slave.cs" />
+    <Compile Include="IPAddressExtensions.cs" />
+    <Compile Include="MODBUSSlave.cs" />
+    <Compile Include="MODBUSSlaveGroup.cs" />
+    <Compile Include="MruList.cs" />
+    <Compile Include="PLUGroup.cs" />
+    <Compile Include="PLUMaster.cs" />
+    <Compile Include="RCB.cs" />
+    <Compile Include="RCBConfiguration.cs" />
+    <Compile Include="RegistryTools.cs" />
+    <Compile Include="SlaveMapping.cs" />
+    <Compile Include="IEC103Group.cs" />
+    <Compile Include="IEC104Group.cs" />
+    <Compile Include="MasterConfiguration.cs" />
+    <Compile Include="MD.cs" />
+    <Compile Include="MDCalculation.cs" />
+    <Compile Include="MODBUSGroup.cs" />
+    <Compile Include="MODBUSMaster.cs" />
+    <Compile Include="ParameterLoadConfiguration.cs" />
+    <Compile Include="Profile.cs" />
+    <Compile Include="ProfileRecord.cs" />
+    <Compile Include="SlaveConfiguration.cs" />
+    <Compile Include="IED.cs" />
+    <Compile Include="SPORTGroup.cs" />
+    <Compile Include="SPORTMaster.cs" />
+    <Compile Include="SystemConfig.cs" />
+    <Compile Include="SystemConfiguration.cs" />
+    <Compile Include="NativeWinAPI.cs" />
+    <Compile Include="NetWorkConfiguration.cs" />
+    <Compile Include="NetworkInterface.cs" />
+    <Compile Include="OpenProPlus_Config.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AI.cs" />
+    <Compile Include="SerialInterface.cs" />
+    <Compile Include="AIConfiguration.cs" />
+    <Compile Include="SerialPortConfiguration.cs" />
+    <Compile Include="IEC103Master.cs" />
+    <Compile Include="IEC104Slave.cs" />
+    <Compile Include="System\Windows\Controls.cs" />
+    <Compile Include="ucADRGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucADRGroup.Designer.cs">
+      <DependentUpon>ucADRGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucADRMasterConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucADRMasterConfiguration.Designer.cs">
+      <DependentUpon>ucADRMasterConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucAIlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAIlist.Designer.cs">
+      <DependentUpon>ucAIlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucCommonDNPSlave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucCommonDNPSlave.Designer.cs">
+      <DependentUpon>ucCommonDNPSlave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucDRConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDRConfig.Designer.cs">
+      <DependentUpon>ucDRConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucAOList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucAOList.Designer.cs">
+      <DependentUpon>ucAOList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucDerivedDI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDerivedDI.Designer.cs">
+      <DependentUpon>ucDerivedDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucDerivedParam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDerivedParam.Designer.cs">
+      <DependentUpon>ucDerivedParam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucClosedLoopAction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucClosedLoopAction.Designer.cs">
+      <DependentUpon>ucClosedLoopAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDetails.Designer.cs">
+      <DependentUpon>ucDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupDNPSA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupDNPSA.Designer.cs">
+      <DependentUpon>ucGroupDNPSA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupDNPSlave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupDNPSlave.Designer.cs">
+      <DependentUpon>ucGroupDNPSlave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupEncryption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupEncryption.Designer.cs">
+      <DependentUpon>ucGroupEncryption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupGraphicalDisplaySlave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupGraphicalDisplaySlave.Designer.cs">
+      <DependentUpon>ucGroupGraphicalDisplaySlave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupMQTTSlave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupMQTTSlave.Designer.cs">
+      <DependentUpon>ucGroupMQTTSlave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupObjectValidation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupObjectValidation.Designer.cs">
+      <DependentUpon>ucGroupObjectValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupSLD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupSLD.Designer.cs">
+      <DependentUpon>ucGroupSLD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupSMSSlave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupSMSSlave.Designer.cs">
+      <DependentUpon>ucGroupSMSSlave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupUnsolicited.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupUnsolicited.Designer.cs">
+      <DependentUpon>ucGroupUnsolicited.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupUser.Designer.cs">
+      <DependentUpon>ucGroupUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupUserFriendlySMS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupUserFriendlySMS.Designer.cs">
+      <DependentUpon>ucGroupUserFriendlySMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucLPFilelist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucLPFilelist.Designer.cs">
+      <DependentUpon>ucLPFilelist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucDIlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDIlist.Designer.cs">
+      <DependentUpon>ucDIlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucDOlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDOlist.Designer.cs">
+      <DependentUpon>ucDOlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucENlist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucENlist.Designer.cs">
+      <DependentUpon>ucENlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroup61850Server.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroup61850Server.Designer.cs">
+      <DependentUpon>ucGroup61850Server.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroup61850ServerSlave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroup61850ServerSlave.Designer.cs">
+      <DependentUpon>ucGroup61850ServerSlave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupLoadProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupLoadProfile.Designer.cs">
+      <DependentUpon>ucGroupLoadProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupSPORTSlave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupSPORTSlave.Designer.cs">
+      <DependentUpon>ucGroupSPORTSlave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupIEC101Slave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupIEC101Slave.Designer.cs">
+      <DependentUpon>ucGroupIEC101Slave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupIEC104.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupIEC104.Designer.cs">
+      <DependentUpon>ucGroupIEC104.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupMODBUSSlave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupMODBUSSlave.Designer.cs">
+      <DependentUpon>ucGroupMODBUSSlave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucIEC101Group.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucIEC101Group.Designer.cs">
+      <DependentUpon>ucIEC101Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucIEC104Group.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucIEC104Group.Designer.cs">
+      <DependentUpon>ucIEC104Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucIEC104MasterGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucIEC104MasterGroup.Designer.cs">
+      <DependentUpon>ucIEC104MasterGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucIED.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucIED.Designer.cs">
+      <DependentUpon>ucIED.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMaster61850Server.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMaster61850Server.Designer.cs">
+      <DependentUpon>ucMaster61850Server.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMasterConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMasterConfiguration.Designer.cs">
+      <DependentUpon>ucMasterConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMasterIEC101.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMasterIEC101.Designer.cs">
+      <DependentUpon>ucMasterIEC101.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMasterIEC103.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMasterIEC103.Designer.cs">
+      <DependentUpon>ucMasterIEC103.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupIEC103.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupIEC103.Designer.cs">
+      <DependentUpon>ucGroupIEC103.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupMODBUS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupMODBUS.Designer.cs">
+      <DependentUpon>ucGroupMODBUS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucGroupVirtual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucGroupVirtual.Designer.cs">
+      <DependentUpon>ucGroupVirtual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMasterIEC104.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMasterIEC104.Designer.cs">
+      <DependentUpon>ucMasterIEC104.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMasterLoadProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMasterLoadProfile.Designer.cs">
+      <DependentUpon>ucMasterLoadProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMasterMODBUS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMasterMODBUS.Designer.cs">
+      <DependentUpon>ucMasterMODBUS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMasterSPORT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMasterSPORT.Designer.cs">
+      <DependentUpon>ucMasterSPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMasterVirtual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMasterVirtual.Designer.cs">
+      <DependentUpon>ucMasterVirtual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucMDCalculation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMDCalculation.Designer.cs">
+      <DependentUpon>ucMDCalculation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucParameterLoadConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucParameterLoadConfiguration.Designer.cs">
+      <DependentUpon>ucParameterLoadConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucPLU.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPLU.Designer.cs">
+      <DependentUpon>ucPLU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucProfileRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucProfileRecord.Designer.cs">
+      <DependentUpon>ucProfileRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucRCBList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucRCBList.Designer.cs">
+      <DependentUpon>ucRCBList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucSlaveConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSlaveConfiguration.Designer.cs">
+      <DependentUpon>ucSlaveConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucSPORTGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSPORTGroup.Designer.cs">
+      <DependentUpon>ucSPORTGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucSystemConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSystemConfig.Designer.cs">
+      <DependentUpon>ucSystemConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucSystemConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSystemConfiguration.Designer.cs">
+      <DependentUpon>ucSystemConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucNetworkConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucNetworkConfiguration.Designer.cs">
+      <DependentUpon>ucNetworkConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucOpenProPlus_Config.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucOpenProPlus_Config.Designer.cs">
+      <DependentUpon>ucOpenProPlus_Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucSerialPortConfiguration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSerialPortConfiguration.Designer.cs">
+      <DependentUpon>ucSerialPortConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucUFSMS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucUFSMS.designer.cs">
+      <DependentUpon>ucUFSMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFSMS.cs" />
+    <Compile Include="UnsolResponse.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="VirtualGroup.cs" />
+    <Compile Include="VirtualMaster.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBonjour.resx">
+      <DependentUpon>frmBonjour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFTP.resx">
+      <DependentUpon>frmFTP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHTMLWebResponse.resx">
+      <DependentUpon>frmHTMLWebResponse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInput.resx">
+      <DependentUpon>frmInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpenPro+UI.resx">
+      <DependentUpon>frmOpenPro+UI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOpenProPlus.resx">
+      <DependentUpon>frmOpenProPlus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOverview.resx">
+      <DependentUpon>frmOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProgess.resx">
+      <DependentUpon>frmProgess.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSLD.resx">
+      <DependentUpon>FrmSLD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchemaValidationLog.resx">
+      <DependentUpon>SchemaValidationLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucADRGroup.resx">
+      <DependentUpon>ucADRGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucADRMasterConfiguration.resx">
+      <DependentUpon>ucADRMasterConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAIlist.resx">
+      <DependentUpon>ucAIlist.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucCommonDNPSlave.resx">
+      <DependentUpon>ucCommonDNPSlave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDRConfig.resx">
+      <DependentUpon>ucDRConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucAOList.resx">
+      <DependentUpon>ucAOList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDerivedDI.resx">
+      <DependentUpon>ucDerivedDI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDerivedParam.resx">
+      <DependentUpon>ucDerivedParam.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucClosedLoopAction.resx">
+      <DependentUpon>ucClosedLoopAction.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDetails.resx">
+      <DependentUpon>ucDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupDNPSA.resx">
+      <DependentUpon>ucGroupDNPSA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupDNPSlave.resx">
+      <DependentUpon>ucGroupDNPSlave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupEncryption.resx">
+      <DependentUpon>ucGroupEncryption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupGraphicalDisplaySlave.resx">
+      <DependentUpon>ucGroupGraphicalDisplaySlave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupMQTTSlave.resx">
+      <DependentUpon>ucGroupMQTTSlave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupObjectValidation.resx">
+      <DependentUpon>ucGroupObjectValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupSLD.resx">
+      <DependentUpon>ucGroupSLD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupSMSSlave.resx">
+      <DependentUpon>ucGroupSMSSlave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupUnsolicited.resx">
+      <DependentUpon>ucGroupUnsolicited.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupUser.resx">
+      <DependentUpon>ucGroupUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupUserFriendlySMS.resx">
+      <DependentUpon>ucGroupUserFriendlySMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucLPFilelist.resx">
+      <DependentUpon>ucLPFilelist.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDIlist.resx">
+      <DependentUpon>ucDIlist.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDOlist.resx">
+      <DependentUpon>ucDOlist.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucENlist.resx">
+      <DependentUpon>ucENlist.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroup61850Server.resx">
+      <DependentUpon>ucGroup61850Server.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroup61850ServerSlave.resx">
+      <DependentUpon>ucGroup61850ServerSlave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupLoadProfile.resx">
+      <DependentUpon>ucGroupLoadProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupSPORTSlave.resx">
+      <DependentUpon>ucGroupSPORTSlave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupIEC101Slave.resx">
+      <DependentUpon>ucGroupIEC101Slave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupIEC104.resx">
+      <DependentUpon>ucGroupIEC104.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupMODBUSSlave.resx">
+      <DependentUpon>ucGroupMODBUSSlave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucIEC101Group.resx">
+      <DependentUpon>ucIEC101Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucIEC104Group.resx">
+      <DependentUpon>ucIEC104Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucIEC104MasterGroup.resx">
+      <DependentUpon>ucIEC104MasterGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucIED.resx">
+      <DependentUpon>ucIED.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMaster61850Server.resx">
+      <DependentUpon>ucMaster61850Server.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMasterConfiguration.resx">
+      <DependentUpon>ucMasterConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMasterIEC101.resx">
+      <DependentUpon>ucMasterIEC101.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMasterIEC103.resx">
+      <DependentUpon>ucMasterIEC103.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupIEC103.resx">
+      <DependentUpon>ucGroupIEC103.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupMODBUS.resx">
+      <DependentUpon>ucGroupMODBUS.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucGroupVirtual.resx">
+      <DependentUpon>ucGroupVirtual.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMasterIEC104.resx">
+      <DependentUpon>ucMasterIEC104.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMasterLoadProfile.resx">
+      <DependentUpon>ucMasterLoadProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMasterMODBUS.resx">
+      <DependentUpon>ucMasterMODBUS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMasterSPORT.resx">
+      <DependentUpon>ucMasterSPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMasterVirtual.resx">
+      <DependentUpon>ucMasterVirtual.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMDCalculation.resx">
+      <DependentUpon>ucMDCalculation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucParameterLoadConfiguration.resx">
+      <DependentUpon>ucParameterLoadConfiguration.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucPLU.resx">
+      <DependentUpon>ucPLU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucProfileRecord.resx">
+      <DependentUpon>ucProfileRecord.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucRCBList.resx">
+      <DependentUpon>ucRCBList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSlaveConfiguration.resx">
+      <DependentUpon>ucSlaveConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSPORTGroup.resx">
+      <DependentUpon>ucSPORTGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSystemConfig.resx">
+      <DependentUpon>ucSystemConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSystemConfiguration.resx">
+      <DependentUpon>ucSystemConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucNetworkConfiguration.resx">
+      <DependentUpon>ucNetworkConfiguration.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucOpenProPlus_Config.resx">
+      <DependentUpon>ucOpenProPlus_Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucSerialPortConfiguration.resx">
+      <DependentUpon>ucSerialPortConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucUFSMS.resx">
+      <DependentUpon>ucUFSMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\master.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modbus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\slave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Misc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PointDetails.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ParameterLoadConfiguration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClosedLoopAction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProfileRecord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MDCalculation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mappingview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mappingview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SlaveRadioButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greenindicator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageedit_7_6752810522.ico" />
+    <None Include="Resources\61850Master.ico" />
+    <None Include="Resources\SPORTGroup.jpg" />
+    <None Include="Resources\SPORTGroup.ico" />
+    <None Include="Resources\SPORTSlaveGroup.ico" />
+    <None Include="Resources\Group.ico" />
+    <None Include="Resources\Group.png" />
+    <None Include="Resources\ftpdownload.png" />
+    <None Include="Resources\ftpupload.png" />
+    <None Include="Resources\ftp1.png" />
+    <None Include="Resources\ftp.png" />
+    <None Include="Resources\oppc_32x32.ico" />
+    <None Include="Resources\magnifier.png" />
+    <None Include="Resources\LPFILE.png" />
+    <None Include="Resources\drconfig.png" />
+    <None Include="Resources\Application.ico" />
+    <None Include="Resources\Application1.png" />
+    <None Include="Resources\Export.ico" />
+    <None Include="Resources\Blank.png" />
+    <None Include="Resources\Line_Double_H_D_1.png" />
+    <None Include="Resources\Line_DoubleT_H_2.png" />
+    <None Include="Resources\Line_DoubleT_H_D_1.png" />
+    <None Include="Resources\Line_Single_H_R_1.png" />
+    <None Include="Resources\Line_Single_V_D_1.png" />
+    <None Include="Resources\Line_SingleL_H_D_1.png" />
+    <None Include="Resources\Line_SingleL_H_L_1.png" />
+    <None Include="Resources\Line_SingleL_V_R_1.png" />
+    <None Include="Resources\Line_SingleL_V_U_1.png" />
+    <None Include="Resources\Line_SingleT_H_L_1.png" />
+    <None Include="Resources\Line_SingleT_H_R_1.png" />
+    <None Include="Resources\Line_SingleT_V_D_1.png" />
+    <None Include="Resources\Line_SingleT_V_U_1.png" />
+    <None Include="Resources\SW_OFF_H_R_1.png" />
+    <None Include="Resources\SW_OFF_H_R_2.png" />
+    <None Include="Resources\SW_OFF_H_V_R_3.png" />
+    <None Include="Resources\SW_OFF_V_D_2.png" />
+    <None Include="Resources\SW_OFF_V_L_1.png" />
+    <None Include="Resources\SW_OFF_V_R_1.png" />
+    <None Include="Resources\SW_OFF_V_U_1.png" />
+    <None Include="Resources\SW_ON_H_R_1.png" />
+    <None Include="Resources\SW_ON_H_R_2.png" />
+    <None Include="Resources\SW_ON_V_D_2.png" />
+    <None Include="Resources\SW_ON_V_L_1.png" />
+    <None Include="Resources\SW_ON_V_R_1.png" />
+    <None Include="Resources\SW_V_D_1 OFF.png" />
+    <None Include="Resources\SW_V_D_1 ON.png" />
+    <None Include="Resources\SW_V_D_1 Undefined.png" />
+    <None Include="Resources\Symbol_Arrow_H_R_1.png" />
+    <None Include="Resources\Symbol_Arrow_V_D_1.png" />
+    <None Include="Resources\Symbol_CT_H_U_1.png" />
+    <None Include="Resources\Symbol_CT_V_R_1.png" />
+    <None Include="Resources\Symbol_GND_H_R_1.png" />
+    <None Include="Resources\Symbol_GND_V_D_1.png" />
+    <None Include="Resources\Symbol_PT_H_R_1.png" />
+    <None Include="Resources\Symbol_PT_V_D_1.png" />
+    <None Include="Resources\Symbol_Tx_H_R_1.png" />
+    <None Include="Resources\Symbol_Tx_H_R_2.png" />
+    <None Include="Resources\Symbol_Tx_V_D_1.png" />
+    <None Include="Resources\Symbol_Tx_V_D_2.png" />
+    <None Include="Resources\Text_AI_H_L_1.png" />
+    <None Include="Resources\Widgets\50x50\Blank.png" />
+    <None Include="Resources\Widgets\50x50\Line_Double_H_D_1.png" />
+    <None Include="Resources\Widgets\50x50\Line_DoubleT_H_2.png" />
+    <None Include="Resources\Widgets\50x50\Line_DoubleT_H_D_1.png" />
+    <None Include="Resources\Widgets\50x50\Line_Single_H_R_1.png" />
+    <None Include="Resources\Widgets\50x50\Line_Single_V_D_1.png" />
+    <None Include="Resources\Widgets\50x50\Line_SingleL_H_D_1.png" />
+    <None Include="Resources\Widgets\50x50\Line_SingleL_H_L_1.png" />
+    <None Include="Resources\Widgets\50x50\Line_SingleL_V_R_1.png" />
+    <None Include="Resources\Widgets\50x50\Line_SingleL_V_U_1.png" />
+    <None Include="Resources\Widgets\50x50\Line_SingleT_H_L_1.png" />
+    <None Include="Resources\Widgets\50x50\Line_SingleT_H_R_1.png" />
+    <None Include="Resources\Widgets\50x50\Line_SingleT_V_D_1.png" />
+    <None Include="Resources\Widgets\50x50\Line_SingleT_V_U_1.png" />
+    <None Include="Resources\Widgets\50x50\SW_OFF_H_R_1.png" />
+    <None Include="Resources\Widgets\50x50\SW_OFF_H_R_2.png" />
+    <None Include="Resources\Widgets\50x50\SW_OFF_H_V_R_3.png" />
+    <None Include="Resources\Widgets\50x50\SW_OFF_V_D_2.png" />
+    <None Include="Resources\Widgets\50x50\SW_OFF_V_L_1.png" />
+    <None Include="Resources\Widgets\50x50\SW_OFF_V_R_1.png" />
+    <None Include="Resources\Widgets\50x50\SW_OFF_V_U_1.png" />
+    <None Include="Resources\Widgets\50x50\SW_ON_H_R_1.png" />
+    <None Include="Resources\Widgets\50x50\SW_ON_H_R_2.png" />
+    <None Include="Resources\Widgets\50x50\SW_ON_V_D_2.png" />
+    <None Include="Resources\Widgets\50x50\SW_ON_V_L_1.png" />
+    <None Include="Resources\Widgets\50x50\SW_ON_V_R_1.png" />
+    <None Include="Resources\Widgets\50x50\SW_V_D_1 Undefined.png" />
+    <None Include="Resources\Widgets\50x50\SW_V_D_1_OFF.png" />
+    <None Include="Resources\Widgets\50x50\SW_V_D_1_ON.png" />
+    <None Include="Resources\Widgets\50x50\Symbol_Arrow_H_R_1.png" />
+    <None Include="Resources\Widgets\50x50\Symbol_Arrow_V_D_1.png" />
+    <None Include="Resources\Widgets\50x50\Symbol_CT_H_U_1.png" />
+    <None Include="Resources\Widgets\50x50\Symbol_CT_V_R_1.png" />
+    <None Include="Resources\Widgets\50x50\Symbol_GND_H_R_1.png" />
+    <None Include="Resources\Widgets\50x50\Symbol_GND_V_D_1.png" />
+    <None Include="Resources\Widgets\50x50\Symbol_PT_H_R_1.png" />
+    <None Include="Resources\Widgets\50x50\Symbol_PT_V_D_1.png" />
+    <None Include="Resources\Widgets\50x50\Symbol_Tx_H_R_1.png" />
+    <None Include="Resources\Widgets\50x50\Symbol_Tx_H_R_2.png" />
+    <None Include="Resources\Widgets\50x50\Symbol_Tx_V_D_1.png" />
+    <None Include="Resources\Widgets\50x50\Symbol_Tx_V_D_2.png" />
+    <None Include="Resources\Widgets\50x50\Text_AI_H_L_1.png" />
+    <None Include="Resources\Widgets\50x50\SW_V_D_1_Undefined.png" />
+    <None Include="Resources\Widgets\50x50\Text_AI 2_H_L_1.png" />
+    <None Include="Resources\Widgets\50x50\Line_Single_H_R_2.png" />
+    <None Include="Resources\GDisplaySlave.ico" />
+    <None Include="Resources\GDisplaySlave.png" />
+    <None Include="Resources\Widgets\50x50\Line_Triple_H_D_1.png" />
+    <None Include="Resources\Widgets\50x50\Line_TripleT_H_2.png" />
+    <None Include="Resources\Widgets\50x50\Line_TripleT_H_D_1.png" />
+    <None Include="Resources\Widgets\50x50\Line_TripleT_H_D_2.png" />
+    <None Include="Resources\Widgets\50x50\SW_H_R_1_OFF.png" />
+    <None Include="Resources\Widgets\50x50\SW_H_R_1_ON.png" />
+    <None Include="Resources\Widgets\50x50\SW_H_R_2_OFF.png" />
+    <None Include="Resources\Widgets\50x50\SW_H_R_2_ON.png" />
+    <None Include="Resources\Widgets\50x50\SW_H_V_R_3_OFF.png" />
+    <None Include="Resources\Widgets\50x50\SW_V_D_2_OFF.png" />
+    <None Include="Resources\Widgets\50x50\SW_V_L_1_OFF.png" />
+    <None Include="Resources\Widgets\50x50\SW_V_L_1_ON.png" />
+    <None Include="Resources\Widgets\50x50\SW_V_R_1_OFF.png" />
+    <None Include="Resources\Widgets\50x50\SW_V_R_1_ON.png" />
+    <None Include="Resources\Widgets\50x50\SW_V_U_1_OFF.png" />
+    <None Include="Resources\Widgets\50x50\SW_V_U_1_ON.png" />
+    <None Include="Resources\Line_Single_H_R_1.ico" />
+    <None Include="Resources\line_double_h_d_1_tl0.ico" />
+    <None Include="Resources\line_double_h_d_1_ZLL_icon.ico" />
+    <None Include="Resources\line_double_h_d_1_gWo_icon.ico" />
+    <None Include="Resources\blank.ico" />
+    <None Include="Resources\line_double_h_d_1.ico" />
+    <None Include="Resources\line_doubleT_h_2_.ico" />
+    <None Include="Resources\line_doubleT_h_d_1.ico" />
+    <None Include="Resources\line_single_h_r_2.ico" />
+    <None Include="Resources\line_single_v_d_1.ico" />
+    <None Include="Resources\line_singleL_h_d_1.ico" />
+    <None Include="Resources\line_singleL_h_l_1.ico" />
+    <None Include="Resources\line_singleL_v_r_1.ico" />
+    <None Include="Resources\line_singleL_v_u_1.ico" />
+    <None Include="Resources\line_singleT_h_l_1.ico" />
+    <None Include="Resources\line_singleT_h_r_1.ico" />
+    <None Include="Resources\line_singleT_v_d_1.ico" />
+    <None Include="Resources\line_singleT_v_u_1.ico" />
+    <None Include="Resources\line_triple_h_d_1.ico" />
+    <None Include="Resources\line_tripleT_h_2.ico" />
+    <None Include="Resources\line_tripleT_h_d_1.ico" />
+    <None Include="Resources\line_tripleT_h_d_2.ico" />
+    <None Include="Resources\sw_h_r_1_off.ico" />
+    <None Include="Resources\sw_h_r_1_on_.ico" />
+    <None Include="Resources\sw_h_r_2_off.ico" />
+    <None Include="Resources\sw_h_r_2_on.ico" />
+    <None Include="Resources\sw_h_v_r_3_off.ico" />
+    <None Include="Resources\sw_v_d_1_off.ico" />
+    <None Include="Resources\sw_v_d_1_on.ico" />
+    <None Include="Resources\sw_v_d_1_undefined.ico" />
+    <None Include="Resources\sw_v_d_2_off.ico" />
+    <None Include="Resources\sw_v_l_1_off.ico" />
+    <None Include="Resources\sw_v_l_1_on.ico" />
+    <None Include="Resources\sw_v_r_1.ico" />
+    <None Include="Resources\sw_v_r_1_on.ico" />
+    <None Include="Resources\sw_v_u_1_off.ico" />
+    <None Include="Resources\sw_v_u_1_on.ico" />
+    <None Include="Resources\symbol_arrow_h_r_1.ico" />
+    <None Include="Resources\symbol_arrow_v_d_1.ico" />
+    <None Include="Resources\symbol_ct_h_u_1.ico" />
+    <None Include="Resources\symbol_ct_v_r_1.ico" />
+    <None Include="Resources\symbol_gnd_h_r_1.ico" />
+    <None Include="Resources\symbol_gnd_v_d_1.ico" />
+    <None Include="Resources\symbol_pt_h_r_1.ico" />
+    <None Include="Resources\symbol_pt_v_d_1.ico" />
+    <None Include="Resources\symbol_tx_h_r_1.ico" />
+    <None Include="Resources\symbol_tx_h_r_2.ico" />
+    <None Include="Resources\symbol_tx_v_d_1.ico" />
+    <None Include="Resources\symbol_tx_v_d_2.ico" />
+    <None Include="Resources\text_ai_2_h_l_1.ico" />
+    <None Include="Resources\text_ai_h_l_1.ico" />
+    <None Include="Resources\Icons\blank.ico" />
+    <None Include="Resources\Icons\line_double_h_d_1.ico" />
+    <None Include="Resources\Icons\line_doubleT_h_2_.ico" />
+    <None Include="Resources\Icons\line_doubleT_h_d_1.ico" />
+    <None Include="Resources\Icons\line_single_h_r_1_Ico.ico" />
+    <None Include="Resources\Icons\line_single_h_r_2.ico" />
+    <None Include="Resources\Icons\line_single_v_d_1.ico" />
+    <None Include="Resources\Icons\line_singleL_h_d_1.ico" />
+    <None Include="Resources\Icons\line_singleL_h_l_1.ico" />
+    <None Include="Resources\Icons\line_singleL_v_r_1.ico" />
+    <None Include="Resources\Icons\line_singleL_v_u_1.ico" />
+    <None Include="Resources\Icons\line_singleT_h_l_1.ico" />
+    <None Include="Resources\Icons\line_singleT_h_r_1.ico" />
+    <None Include="Resources\Icons\line_singleT_v_d_1.ico" />
+    <None Include="Resources\Icons\line_singleT_v_u_1.ico" />
+    <None Include="Resources\Icons\line_triple_h_d_1.ico" />
+    <None Include="Resources\Icons\line_tripleT_h_2.ico" />
+    <None Include="Resources\Icons\line_tripleT_h_d_1.ico" />
+    <None Include="Resources\Icons\line_tripleT_h_d_2.ico" />
+    <None Include="Resources\Icons\sw_h_r_1_off.ico" />
+    <None Include="Resources\Icons\sw_h_r_1_on_.ico" />
+    <None Include="Resources\Icons\sw_h_r_2_off.ico" />
+    <None Include="Resources\Icons\sw_h_r_2_on.ico" />
+    <None Include="Resources\Icons\sw_h_v_r_3_off.ico" />
+    <None Include="Resources\Icons\sw_v_d_1_off.ico" />
+    <None Include="Resources\Icons\sw_v_d_1_on.ico" />
+    <None Include="Resources\Icons\sw_v_d_1_undefined.ico" />
+    <None Include="Resources\Icons\sw_v_d_2_off.ico" />
+    <None Include="Resources\Icons\sw_v_l_1_off.ico" />
+    <None Include="Resources\Icons\sw_v_l_1_on.ico" />
+    <None Include="Resources\Icons\sw_v_r_1.ico" />
+    <None Include="Resources\Icons\sw_v_r_1_on.ico" />
+    <None Include="Resources\Icons\sw_v_u_1_off.ico" />
+    <None Include="Resources\Icons\sw_v_u_1_on.ico" />
+    <None Include="Resources\Icons\symbol_arrow_h_r_1.ico" />
+    <None Include="Resources\Icons\symbol_arrow_v_d_1.ico" />
+    <None Include="Resources\Icons\symbol_ct_h_u_1.ico" />
+    <None Include="Resources\Icons\symbol_ct_v_r_1.ico" />
+    <None Include="Resources\Icons\symbol_gnd_h_r_1.ico" />
+    <None Include="Resources\Icons\symbol_gnd_v_d_1.ico" />
+    <None Include="Resources\Icons\symbol_pt_h_r_1.ico" />
+    <None Include="Resources\Icons\symbol_pt_v_d_1.ico" />
+    <None Include="Resources\Icons\symbol_tx_h_r_1.ico" />
+    <None Include="Resources\Icons\symbol_tx_h_r_2.ico" />
+    <None Include="Resources\Icons\symbol_tx_v_d_1.ico" />
+    <None Include="Resources\Icons\symbol_tx_v_d_2.ico" />
+    <None Include="Resources\Icons\text_ai_2_h_l_1.ico" />
+    <None Include="Resources\Icons\text_ai_h_l_1.ico" />
+    <None Include="Resources\Icons\line_double_h_d_1_Ico.ico" />
+    <None Include="Resources\Icons\line_doubleT_h_2_Ico.ico" />
+    <None Include="Resources\Icons\line_doubleT_h_d_1_Ico.ico" />
+    <None Include="Resources\Icons\line_single_h_r_2_Ico.ico" />
+    <None Include="Resources\Icons\line_single_v_d_1_Ico.ico" />
+    <None Include="Resources\Icons\line_singleL_h_d_1_Ico.ico" />
+    <None Include="Resources\Icons\line_singleL_h_l_1_Ico.ico" />
+    <None Include="Resources\Icons\line_singleL_v_r_1_Ico.ico" />
+    <None Include="Resources\Icons\line_singleL_v_u_1_Ico.ico" />
+    <None Include="Resources\Icons\line_singleT_h_l_1_Ico.ico" />
+    <None Include="Resources\Icons\line_singleT_h_r_1_Ico.ico" />
+    <None Include="Resources\Icons\line_singleT_v_d_1_Ico.ico" />
+    <None Include="Resources\Icons\line_singleT_v_u_1_Ico.ico" />
+    <None Include="Resources\Icons\line_triple_h_d_1_Ico.ico" />
+    <None Include="Resources\Icons\line_tripleT_h_2_Ico.ico" />
+    <None Include="Resources\Icons\line_tripleT_h_d_1_Ico.ico" />
+    <None Include="Resources\Icons\line_tripleT_h_d_2_Ico.ico" />
+    <None Include="Resources\Icons\sw_h_r_1_off_Ico.ico" />
+    <None Include="Resources\Icons\sw_h_r_1_on_Ico.ico" />
+    <None Include="Resources\Icons\sw_h_r_2_off_Ico.ico" />
+    <None Include="Resources\Icons\sw_h_r_2_on_Ico.ico" />
+    <None Include="Resources\Icons\sw_h_v_r_3_off_Ico.ico" />
+    <None Include="Resources\Icons\sw_v_d_1_off_Ico.ico" />
+    <None Include="Resources\Icons\sw_v_d_1_on_Ico.ico" />
+    <None Include="Resources\Icons\sw_v_d_1_undefined_Ico.ico" />
+    <None Include="Resources\Icons\sw_v_d_2_off_Ico.ico" />
+    <None Include="Resources\Icons\sw_v_l_1_off_Ico.ico" />
+    <None Include="Resources\Icons\sw_v_l_1_on_Ico.ico" />
+    <None Include="Resources\Icons\sw_v_r_1_Ico.ico" />
+    <None Include="Resources\Icons\sw_v_r_1_on_Ico.ico" />
+    <None Include="Resources\Icons\sw_v_u_1_off_Ico.ico" />
+    <None Include="Resources\Icons\sw_v_u_1_on_Ico.ico" />
+    <None Include="Resources\Icons\symbol_arrow_h_r_1_Ico.ico" />
+    <None Include="Resources\Icons\symbol_arrow_v_d_1_Ico.ico" />
+    <None Include="Resources\Icons\symbol_ct_h_u_1_Ico.ico" />
+    <None Include="Resources\Icons\symbol_ct_v_r_1_Ico.ico" />
+    <None Include="Resources\Icons\symbol_gnd_h_r_1_Ico.ico" />
+    <None Include="Resources\Icons\symbol_gnd_v_d_1_Ico.ico" />
+    <None Include="Resources\Icons\symbol_pt_h_r_1_Ico.ico" />
+    <None Include="Resources\Icons\symbol_pt_v_d_1_Ico.ico" />
+    <None Include="Resources\Icons\symbol_tx_h_r_1_Ico.ico" />
+    <None Include="Resources\Icons\symbol_tx_h_r_2_Ico.ico" />
+    <None Include="Resources\Icons\symbol_tx_v_d_1_Ico.ico" />
+    <None Include="Resources\Icons\symbol_tx_v_d_2_Ico.ico" />
+    <None Include="Resources\Icons\text_ai_2_h_l_1_Ico.ico" />
+    <None Include="Resources\Icons\text_ai_h_l_1_Ico.ico" />
+    <None Include="Resources\Icons\blank_Ico.ico" />
+    <None Include="Resources\Icons\widget_wwi_icon.ico" />
+    <None Include="Resources\Icons\switch_zzO_icon.ico" />
+    <None Include="Resources\Icons\symbol1_vzS_icon.ico" />
+    <None Include="Resources\Icons\text_3Am_icon.ico" />
+    <None Include="Resources\Clear.png" />
+    <None Include="Resources\Widgets\Blank.png" />
+    <None Include="Resources\Widgets\Line_Double_H_D_1.png" />
+    <None Include="Resources\Widgets\Line_DoubleT_H_2.png" />
+    <None Include="Resources\Widgets\Line_DoubleT_H_D_1.png" />
+    <None Include="Resources\Widgets\Line_Single_H_R_1.png" />
+    <None Include="Resources\Widgets\Line_Single_H_R_2.png" />
+    <None Include="Resources\Widgets\Line_Single_V_D_1.png" />
+    <None Include="Resources\Widgets\Line_SingleL_H_D_1.png" />
+    <None Include="Resources\Widgets\Line_SingleL_H_L_1.png" />
+    <None Include="Resources\Widgets\Line_SingleL_V_R_1.png" />
+    <None Include="Resources\Widgets\Line_SingleL_V_U_1.png" />
+    <None Include="Resources\Widgets\Line_SingleT_H_L_1.png" />
+    <None Include="Resources\Widgets\Line_SingleT_H_R_1.png" />
+    <None Include="Resources\Widgets\Line_SingleT_H_R_2.png" />
+    <None Include="Resources\Widgets\Line_SingleT_V_D_1.png" />
+    <None Include="Resources\Widgets\Line_SingleT_V_U_1.png" />
+    <None Include="Resources\Widgets\Line_Triple_H_D_1.png" />
+    <None Include="Resources\Widgets\Line_Triple_H_D_2.png" />
+    <None Include="Resources\Widgets\Line_Triple_H_D_3.png" />
+    <None Include="Resources\Widgets\Line_TripleT_H_D_1.png" />
+    <None Include="Resources\Widgets\SW_H_D_1_OFF.png" />
+    <None Include="Resources\Widgets\SW_H_D_1_ON.png" />
+    <None Include="Resources\Widgets\SW_H_D_1_Undefined.png" />
+    <None Include="Resources\Widgets\SW_H_R_2_OFF.png" />
+    <None Include="Resources\Widgets\SW_H_R_2_ON.png" />
+    <None Include="Resources\Widgets\SW_H_R_2_Undefined.png" />
+    <None Include="Resources\Widgets\SW_V_D_1_OFF.png" />
+    <None Include="Resources\Widgets\SW_V_D_1_ON.png" />
+    <None Include="Resources\Widgets\SW_V_D_1_Undefined.png" />
+    <None Include="Resources\Widgets\SW_V_U_1_OFF.png" />
+    <None Include="Resources\Widgets\SW_V_U_1_ON.png" />
+    <None Include="Resources\Widgets\SW_V_U_1_Undefined.png" />
+    <None Include="Resources\Widgets\Symbol_Arrow_H_L_1.png" />
+    <None Include="Resources\Widgets\Symbol_Arrow_H_R_1.png" />
+    <None Include="Resources\Widgets\Symbol_Arrow_V_D_1.png" />
+    <None Include="Resources\Widgets\Symbol_GND_H_L_1.png" />
+    <None Include="Resources\Widgets\Symbol_GND_H_R_1.png" />
+    <None Include="Resources\Widgets\Symbol_GND_V_R_1.png" />
+    <None Include="Resources\Widgets\Symbol_Tx_V_D_1.png" />
+    <None Include="Resources\Widgets\Symbol_Tx_V_D_2.png" />
+    <None Include="Resources\Widgets\Symbol2_CT_V_D_1.png" />
+    <None Include="Resources\Widgets\Symbol2_Tx_V_D_1.png" />
+    <None Include="Resources\Widgets\Symbol2_Tx_V_D_2.png" />
+    <None Include="Resources\Widgets\Text_AI 2_H_L_1.png" />
+    <None Include="Resources\Widgets\Text_AI 3_H_L_1.png" />
+    <None Include="Resources\Widgets\Text_AI 4_H_L_1.png" />
+    <None Include="Resources\Widgets\Text_AI 5_H_L_1.png" />
+    <None Include="Resources\Widgets\Text_AI_H_L_1.png" />
+    <None Include="Resources\Icons\line_tripleT_h_d_2_Ico1.ico" />
+    <None Include="Resources\Icons\line_tripleT_h_d_1_Ico1.ico" />
+    <None Include="Resources\Icons\line_tripleT_h_2_Ico1.ico" />
+    <None Include="Resources\Icons\line_triple_h_d_1_Ico1.ico" />
+    <None Include="Resources\Icons\line_singleT_v_u_1_Ico1.ico" />
+    <None Include="Resources\Icons\line_singleT_v_d_1_Ico1.ico" />
+    <None Include="Resources\Icons\line_singleT_h_r_1_Ico1.ico" />
+    <None Include="Resources\Icons\line_singleT_h_l_1_Ico1.ico" />
+    <None Include="Resources\Icons\line_singleL_v_u_1_Ico1.ico" />
+    <None Include="Resources\blank_Ico.ico" />
+    <None Include="Resources\index_HwQ_icon.ico" />
+    <None Include="Resources\index123_z62_icon.ico" />
+    <None Include="Resources\line_double_h_d_1_Ico.ico" />
+    <None Include="Resources\line_doubleT_h_2_Ico.ico" />
+    <None Include="Resources\line_doubleT_h_d_1_Ico.ico" />
+    <None Include="Resources\line_single_h_r_1_Ico.ico" />
+    <None Include="Resources\line_single_h_r_2_Ico.ico" />
+    <None Include="Resources\line_single_v_d_1_Ico.ico" />
+    <None Include="Resources\line_singleL_h_d_1_Ico.ico" />
+    <None Include="Resources\line_singleL_h_l_1_Ico.ico" />
+    <None Include="Resources\line_singleL_v_r_1_Ico.ico" />
+    <None Include="Resources\line_singleL_v_u_1_Ico.ico" />
+    <None Include="Resources\line_singleT_h_l_1_Ico.ico" />
+    <None Include="Resources\line_singleT_h_r_1_Ico.ico" />
+    <None Include="Resources\line_singlet_h_r_2_Ico.ico" />
+    <None Include="Resources\line_singleT_v_d_1_Ico.ico" />
+    <None Include="Resources\line_singleT_v_u_1_Ico.ico" />
+    <None Include="Resources\line_triple_h_d_1_Ico.ico" />
+    <None Include="Resources\line_triple_h_d_2_Ico.ico" />
+    <None Include="Resources\line_triple_h_d_3_Ico.ico" />
+    <None Include="Resources\line_tripleT_h_2_Ico.ico" />
+    <None Include="Resources\line_tripleT_h_d_1_Ico.ico" />
+    <None Include="Resources\line_tripleT_h_d_2_Ico.ico" />
+    <None Include="Resources\output_onlinepngtools_1__iWV_icon.ico" />
+    <None Include="Resources\output_onlinepngtools_2__MTP_icon.ico" />
+    <None Include="Resources\output_onlinepngtools_2__OOy_icon.ico" />
+    <None Include="Resources\sw_h_d_1_off_Ico.ico" />
+    <None Include="Resources\sw_h_d_1_on_Ico.ico" />
+    <None Include="Resources\sw_h_d_1_Undefined_Ico.ico" />
+    <None Include="Resources\sw_h_r_1_off_Ico.ico" />
+    <None Include="Resources\sw_h_r_1_on_Ico.ico" />
+    <None Include="Resources\sw_h_r_2_off_Ico.ico" />
+    <None Include="Resources\sw_h_r_2_on_Ico.ico" />
+    <None Include="Resources\sw_h_r_2_Undefined_Ico.ico" />
+    <None Include="Resources\sw_h_v_r_3_off_Ico.ico" />
+    <None Include="Resources\sw_v_d_1_off_Ico.ico" />
+    <None Include="Resources\sw_v_d_1_on_Ico.ico" />
+    <None Include="Resources\sw_v_d_1_undefined_Ico.ico" />
+    <None Include="Resources\sw_v_d_2_off_Ico.ico" />
+    <None Include="Resources\sw_v_l_1_off_Ico.ico" />
+    <None Include="Resources\sw_v_l_1_on_Ico.ico" />
+    <None Include="Resources\sw_v_r_1_Ico.ico" />
+    <None Include="Resources\sw_v_r_1_on_Ico.ico" />
+    <None Include="Resources\sw_v_u_1_off_Ico.ico" />
+    <None Include="Resources\sw_v_u_1_on_Ico.ico" />
+    <None Include="Resources\sw_v_u_1_undefined_Ico.ico" />
+    <None Include="Resources\switch_zzO_icon.ico" />
+    <None Include="Resources\symbol_arrow_h_l_1_Ico.ico" />
+    <None Include="Resources\symbol_arrow_h_r_1_Ico.ico" />
+    <None Include="Resources\symbol_arrow_v_d_1_Ico.ico" />
+    <None Include="Resources\symbol_ct_h_u_1_Ico.ico" />
+    <None Include="Resources\symbol_ct_v_r_1_Ico.ico" />
+    <None Include="Resources\symbol_gnd_h_l_1_Ico.ico" />
+    <None Include="Resources\symbol_gnd_h_r_1_Ico.ico" />
+    <None Include="Resources\symbol_gnd_v_d_1_Ico.ico" />
+    <None Include="Resources\symbol_gnd_v_r_1_Ico.ico" />
+    <None Include="Resources\symbol_pt_h_r_1_Ico.ico" />
+    <None Include="Resources\symbol_pt_v_d_1_Ico.ico" />
+    <None Include="Resources\symbol_tx_h_r_1_Ico.ico" />
+    <None Include="Resources\symbol_tx_h_r_2_Ico.ico" />
+    <None Include="Resources\symbol_tx_v_d_1_Ico.ico" />
+    <None Include="Resources\symbol_tx_v_d_2_Ico.ico" />
+    <None Include="Resources\symbol1_vzS_icon.ico" />
+    <None Include="Resources\symbol2_ct_v_d_1_Ico.ico" />
+    <None Include="Resources\symbol2_tx_v_d_1_Ico.ico" />
+    <None Include="Resources\symbol2_tx_v_d_2_Ico.ico" />
+    <None Include="Resources\text_3Am_icon.ico" />
+    <None Include="Resources\text_ai_2_h_l_1_Ico.ico" />
+    <None Include="Resources\text_ai_3_h_l_1_Ico.ico" />
+    <None Include="Resources\text_ai_4_h_l_1_Ico.ico" />
+    <None Include="Resources\text_ai_5_h_l_1_Ico.ico" />
+    <None Include="Resources\text_ai_h_l_1_Ico.ico" />
+    <None Include="Resources\widget_wwi_icon.ico" />
+    <None Include="Resources\widget2_AL0_icon.ico" />
+    <None Include="Resources\output_onlinepngtools_6RR_icon.ico" />
+    <None Include="Resources\Icons\output_onlinepngtools_3__TpW_icon.ico" />
+    <None Include="Resources\Icons\text_Iuh_icon.ico" />
+    <None Include="Resources\Icons\switch_wAj_icon.ico" />
+    <None Include="Resources\Icons\index_94L_icon.ico" />
+    <None Include="Resources\Icons\favicon_16x16_dbp_icon.ico" />
+    <None Include="Resources\Widgets\Text_AI_2_H_L_1.png" />
+    <None Include="Resources\Widgets\Text_AI_3_H_L_1.png" />
+    <None Include="Resources\Widgets\Text_AI_4_H_L_1.png" />
+    <None Include="Resources\Widgets\Text_AI_5_H_L_1.png" />
+    <None Include="Resources\SMSSlave.ico" />
+    <None Include="Resources\SMSSlave1.ico" />
+    <None Include="Resources\SMSSlavea.ico" />
+    <None Include="Resources\Icons\Blank_Icon.ico" />
+    <None Include="Resources\Icons\Line_Double_Icon.ico" />
+    <None Include="Resources\Icons\Line_Icon.ico" />
+    <None Include="Resources\Icons\Line_Single_Icon.ico" />
+    <None Include="Resources\Icons\line_singlet_h_r_2_Ico.ico" />
+    <None Include="Resources\Icons\Line_SingleT_V_D_1_icon.ico" />
+    <None Include="Resources\Icons\line_triple_h_d_2_Ico.ico" />
+    <None Include="Resources\Icons\line_triple_h_d_3_Ico.ico" />
+    <None Include="Resources\Icons\Line_Triple_Icon.ico" />
+    <None Include="Resources\Icons\sw_h_d_1_off_Ico.ico" />
+    <None Include="Resources\Icons\sw_h_d_1_on_Ico.ico" />
+    <None Include="Resources\Icons\sw_h_d_1_Undefined_Ico.ico" />
+    <None Include="Resources\Icons\sw_h_r_2_Undefined_Ico.ico" />
+    <None Include="Resources\Icons\sw_v_u_1_undefined_Ico.ico" />
+    <None Include="Resources\Icons\symbol_arrow_h_l_1_Ico.ico" />
+    <None Include="Resources\Icons\symbol_arrow_h_lr1_Ico.ico" />
+    <None Include="Resources\Icons\symbol_gnd_h_l_1_Ico.ico" />
+    <None Include="Resources\Icons\symbol_gnd_v_r_1_Ico.ico" />
+    <None Include="Resources\Icons\symbol2_ct_v_d_1_Ico.ico" />
+    <None Include="Resources\Icons\symbol2_tx_v_d_1_Ico.ico" />
+    <None Include="Resources\Icons\symbol2_tx_v_d_2_Ico.ico" />
+    <None Include="Resources\Icons\text_ai_2_h_l_1_Ico %281%29.ico" />
+    <None Include="Resources\Icons\text_ai_3_h_l_1_Ico.ico" />
+    <None Include="Resources\Icons\text_ai_4_h_l_1_Ico.ico" />
+    <None Include="Resources\Icons\Textt_Ico.ico" />
+    <None Include="Resources\DNP3Slave.ico" />
+    <None Include="Resources\DNP3Settings.ico" />
+    <None Include="Resources\UserConf.ico" />
+    <None Include="Resources\Encryption.ico" />
+    <None Include="Resources\UnsolicitedResponse.ico" />
+    <None Include="Resources\DNPSA.ico" />
+    <None Include="Resources\ObjectVariation.ico" />
+    <Content Include="Version.txt" />
+    <Content Include="ProjectTools_64x64.ico" />
+    <None Include="Resources\IEC101Master.jpg" />
+    <None Include="Resources\IEC61850ClientGroup.ico" />
+    <None Include="Resources\IEC61850ServerGroup.ico" />
+    <None Include="Resources\RCB.ico" />
+    <None Include="Resources\IEC61850ServerMaster.ico" />
+    <None Include="Resources\AO.ico" />
+    <None Include="Resources\AO.bmp" />
+    <None Include="Resources\Save %289%29.png" />
+    <None Include="Resources\Save %289%29.ico" />
+    <None Include="Resources\Save %289%291.ico" />
+    <None Include="Resources\Save %285%29.ico" />
+    <None Include="Resources\delete %281%29.png" />
+    <None Include="Resources\question.png" />
+    <None Include="Resources\info %281%29.png" />
+    <None Include="Resources\cross-mark-on-a-black-circle-background %281%29.png" />
+    <None Include="Resources\switch %285%29.png" />
+    <None Include="Resources\switch.png" />
+    <None Include="Resources\switch %281%29.png" />
+    <None Include="Resources\switch %288%29.png" />
+    <None Include="Resources\imageedit_7_6956011015.ico" />
+    <None Include="Resources\imageedit_13_8484272357.ico" />
+    <None Include="Resources\imageedit_13_8484272357.png" />
+    <None Include="Resources\imageedit_13_84842723571.ico" />
+    <None Include="Resources\IEC101Master.png" />
+    <None Include="Resources\IEC101Group.ico" />
+    <None Include="Resources\IEC101SlaveGroup.ico" />
+    <Content Include="Resources\ADRGroup.png" />
+    <Content Include="Resources\ADRMaster.png" />
+    <None Include="Resources\loading.gif" />
+    <None Include="Resources\MODBUSSlaveGroup.ico" />
+    <None Include="Resources\OpenProPlus_Config.ico" />
+    <None Include="Resources\MODBUSGroup.ico" />
+    <None Include="Resources\IEC104Group.ico" />
+    <None Include="Resources\ClosedLoopAction.ico" />
+    <None Include="Resources\DerivedParam.ico" />
+    <None Include="Resources\DerivedDI.ico" />
+    <None Include="Resources\IED.ico" />
+    <None Include="Resources\EN.ico" />
+    <None Include="Resources\DO.ico" />
+    <None Include="Resources\DI.ico" />
+    <None Include="Resources\AI.ico" />
+    <None Include="Resources\AI.png" />
+    <None Include="Resources\DerivedDI.png" />
+    <None Include="Resources\VirtualMaster.png" />
+    <None Include="Resources\DerivedParam.png" />
+    <None Include="Resources\EN.png" />
+    <None Include="Resources\DO.png" />
+    <None Include="Resources\DI.png" />
+    <None Include="Resources\IED.png" />
+    <None Include="Resources\Virtual.png" />
+    <None Include="Resources\ModbusMaster.png" />
+    <None Include="Resources\IEC103Master.png" />
+    <None Include="Resources\VirtualGroup.png" />
+    <None Include="Resources\IEC103Group.png" />
+    <None Include="Resources\aepl.ico" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\sorting.png" />
+    <None Include="Resources\Overview.ico" />
+    <None Include="Resources\Overview.png" />
+    <None Include="Resources\desc.png" />
+    <None Include="Resources\ProjectTools_64x64.ico" />
+    <None Include="Resources\Icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
